@@ -1,0 +1,326 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #ffffff;  /* White background */
+  margin: 0;
+  color: #2c3e50;  /* Dark blue-gray text for better readability */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1400px;  /* Limit maximum width */
+}
+
+.main-content {
+  flex: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1, h2, h3 {
+  color: #3498db;  /* Bright blue heading color */
+  margin-top: 0;
+  position: relative;
+}
+
+h1::after, h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--welcome-gradient);
+}
+
+nav.navbar {
+  background: var(--welcome-gradient);  /* Using welcome gradient for navbar */
+  color: white;  /* White text for contrast */
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+nav.navbar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+nav .logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: white;
+}
+
+nav .nav-links {
+  gap: 2rem;
+}
+
+nav .nav-links li a {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: white;
+}
+
+button, input[type="file"] {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--primary-green);
+  background: var(--primary-green);  /* Lime green button fill */
+  color: white;  /* White text for buttons */
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: var(--secondary-green);  /* Slightly darker lime green on hover */
+  border-color: var(--secondary-green);
+  transform: translateY(-2px);
+}
+
+/* Enhancing section styling and centering */
+.themed-section {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  padding: 2rem;
+  background: white;  /* White background */
+  background-image: linear-gradient(120deg, rgba(52, 152, 219, 0.05), white, rgba(57, 255, 20, 0.05));
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);  /* Subtle shadow */
+  position: relative;
+  overflow: hidden;
+}
+
+.themed-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--welcome-gradient);
+}
+
+.centered-content {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Ensure main sections are properly centered and sized */
+.mission-section,
+.upload-container,
+.support-section {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ffffff;  /* White background for sections */
+}
+
+/* Card styling for consistent look */
+.card {
+  background: white;  /* White cards */
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);  /* Subtle shadow */
+  border-top: 3px solid transparent;
+  background-image: linear-gradient(white, white),
+                    var(--welcome-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(57, 255, 20, 0.15);
+}
+
+/* Ensure centered layout in the browser */
+.container > * {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Make sure sections are properly centered */
+main, section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Button styling updates */
+button.cta-button {
+  background: var(--primary-green);  /* Using our lime green */
+  color: white;  /* White text for buttons */
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+button.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--welcome-gradient);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+button.cta-button:hover {
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);  /* Green glow effect */
+  transform: translateY(-3px);  /* Slight lift effect on hover */
+}
+
+button.cta-button:hover::before {
+  opacity: 1;
+}
+
+/* Spinner animation for loading indicators */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 992px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+  
+  .services-grid, 
+  .team-grid,
+  .job-card {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+  
+  .services-grid, 
+  .team-grid,
+  .job-card {
+    gap: 1.5rem;
+  }
+    /* Improve mobile layout */
+  .container {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+    .team-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Keep services-grid horizontal on all screen sizes */
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    height: 350px;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-button {
+    padding: 0.6rem 1.2rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  .container {
+    padding: 0.75rem;
+    margin: 1rem auto;
+  }
+
+  /* Adjust spacing for mobile */
+  section {
+    margin-bottom: 2rem;
+  }
+
+  /* Make sure images don't overflow their containers */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

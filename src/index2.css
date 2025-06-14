@@ -1,0 +1,345 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* X Talents Theme Colors */
+  --primary-blue: #3498db;  /* Bright blue */
+  --primary-green: #39FF14;  /* Lime green */
+  --secondary-blue: #2980b9;  /* Darker blue */
+  --secondary-green: #32e912;  /* Slightly darker lime green */
+  --dark-blue: #1a5276;  /* Very dark blue for contrast */
+  --welcome-gradient: linear-gradient(135deg, #3498db, #39FF14);
+  --card-glow: 0 4px 15px rgba(57, 255, 20, 0.2);
+  --subtle-gradient: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(57, 255, 20, 0.1));
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid var(--primary-green);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--primary-green);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background-color: var(--secondary-green);
+  border-color: var(--secondary-green);
+  transform: translateY(-2px);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.hero-section {
+  position: relative;
+  height: 500px;
+  background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 3rem;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8); /* Black with transparency */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content {
+  color: white;
+  max-width: 700px;
+  padding: 0 2rem;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #39FF14;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--primary-green);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: var(--secondary-green);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(57, 255, 20, 0.4);
+}
+
+.mission-section {
+  margin-bottom: 3rem;
+  border-radius: 10px;
+  padding: 2rem;
+  /* Theme is now controlled by inline styles */
+}
+
+.services-section {
+  margin-bottom: 3rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.testimonial-section {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.testimonial-section blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin: 0;
+  padding-left: 1.5rem;
+  border-left: 4px solid #00695c;
+}
+
+.testimonial-section footer {
+  margin-top: 1rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* About page styles */
+.team-section {
+  margin-top: 3rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #00695c;
+}
+
+/* Jobs page styles */
+.job-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.job-card:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+.job-card h3 {
+  margin-top: 0;
+}
+
+.resources-list {
+  list-style: none;
+  padding: 0;
+}
+
+.resources-list li {
+  margin-bottom: 1rem;
+}
+
+.resources-list a {
+  display: block;
+  padding: 1rem;
+  background: #e0f2f1;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #00695c;
+  transition: all 0.3s ease;
+}
+
+.resources-list a:hover {
+  background: #b2dfdb;
+}
+
+/* Resume upload styles */
+.upload-container {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.file-input-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #000;
+  padding: 1rem;
+}
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.navbar-logo {
+  height: 50px;
+}
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #000;
+  padding: 1rem;
+  color: #fff;
+}
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.footer-logo {
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-section {
+    height: 450px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 400px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  
+  .services-grid, .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    height: 350px;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

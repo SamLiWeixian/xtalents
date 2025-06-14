@@ -1,0 +1,209 @@
+/* Navbar styles */
+.navbar {
+  background: var(--welcome-gradient);  /* Gradient with blue and lime green */
+  color: white;  /* White text for contrast */
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(57, 255, 20, 0.2);  /* Subtle green glow */
+}
+
+/* Removing the bottom border to match footer style */
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.navbar .nav-left {
+  display: flex;
+  align-items: center;
+  width: 20%; /* Reduced width for the logo */
+}
+
+.navbar .nav-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%; /* Further increased width for the center navigation */
+}
+
+.navbar .nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 5%; /* Reduced width for the right section */
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;  /* White logo for contrast against blue background */
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem; /* Increased gap between links */
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Take full width of parent */
+  align-items: center; /* Ensure vertical alignment */
+  justify-content: center; /* Center items */
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.navbar .nav-links li a {
+  color: white;  /* White text for contrast against blue background */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  position: relative;
+  box-sizing: border-box; /* Ensure padding is included in width/height */
+  display: inline-block; /* Consistent display behavior */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.navbar .nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary-green);  /* Lime green underline for contrast */
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar .nav-links li a:hover::after {
+  width: 80%;
+}
+
+.navbar .nav-links li a:hover {
+  color: var(--primary-green);  /* Lime green text on hover for a pop of color */
+  text-decoration: none;
+}
+
+.navbar .highlight-link {
+  background: rgba(255, 255, 255, 0.2);  /* Semi-transparent white background */
+  color: white !important;  /* White text for contrast */
+  padding: 0.5rem 1rem;  /* Match the padding of non-highlighted links */
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-sizing: border-box;  /* Ensure padding is included in width calculations */
+  display: inline-block; /* Consistent display behavior */
+  /* Using box-shadow instead of border to avoid layout shifts */
+  box-shadow: 0 2px 0 var(--primary-green);
+}
+
+.navbar .highlight-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--welcome-gradient);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navbar .highlight-link:hover {
+  text-decoration: none !important;
+  box-shadow: 0 2px 0 var(--primary-green), 0 4px 12px rgba(57, 255, 20, 0.4);
+}
+
+.navbar .highlight-link:hover::before {
+  opacity: 1;
+}
+
+.navbar .highlight-link::after {
+  display: none;  /* Hide the underline effect for highlight links */
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  margin-left: auto;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-wrap: wrap;
+  }
+  
+  .navbar .nav-left {
+    width: 70%; /* More space for logo */
+  }
+  
+  .navbar .nav-center {
+    order: 3; /* Move below in mobile view */
+    width: 100%; /* Full width */
+  }
+  
+  .navbar .nav-right {
+    width: 30%; /* Space for menu button */
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .navbar .logo img {
+    height: 150px !important;
+  }
+  
+  .navbar .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column; /* Stack vertically in mobile */
+    background-color: var(--primary-blue); /* Match theme */
+    align-items: center;
+    padding: 1rem 0;
+    gap: 1rem;
+    transform: translateY(-150%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(57, 255, 20, 0.2);
+    flex-wrap: wrap; /* Allow wrapping in mobile dropdown */
+  }
+
+  .navbar .nav-links.nav-active {
+    transform: translateY(0);
+  }
+  
+  .navbar .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .navbar .nav-links li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
