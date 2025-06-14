@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { FaHandshake, FaHeart, FaChartLine } from 'react-icons/fa';
+import { FaHandshake, FaHeart, FaChartLine, FaUserShield } from 'react-icons/fa';
 import samLiImage from '../assets/team/sam-li.jpg';
 import hansChenImage from '../assets/team/hans-chen.jpg';
 
@@ -63,10 +63,21 @@ const AboutPage: React.FC = () => {
           borderRadius: '8px',
           boxShadow: '0 4px 15px rgba(57, 255, 20, 0.1)',
           border: '1px solid rgba(52, 152, 219, 0.3)'
-        }}>
-          <FaChartLine style={iconStyle} />
+        }}>          <FaChartLine style={iconStyle} />
           <h3>Growth</h3>
           <p>We're committed to helping people develop and reach their full potential.</p>
+        </div>
+        <div style={{ 
+          textAlign: 'center', 
+          padding: '1.5rem', 
+          background: 'linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(57, 255, 20, 0.1))', 
+          borderRadius: '8px',
+          boxShadow: '0 4px 15px rgba(57, 255, 20, 0.1)',
+          border: '1px solid rgba(52, 152, 219, 0.3)'
+        }}>
+          <FaUserShield style={iconStyle} />
+          <h3>Inclusion</h3>
+          <p>We celebrate diversity and create opportunities for all, regardless of background, age, or circumstance.</p>
         </div>
       </div>    </section>
 
