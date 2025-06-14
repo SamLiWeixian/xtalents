@@ -869,7 +869,7 @@ SKILLS
                 color: '#2c3e50'
               }}
             >
-              Upload Text File
+              Upload File
             </button>
           </div>
           

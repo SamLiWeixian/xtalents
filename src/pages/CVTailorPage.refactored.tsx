@@ -7,7 +7,7 @@ import { Document, Packer, Paragraph, TextRun } from 'docx';
 import mammoth from 'mammoth';
 
 // API configuration
-const GEMINI_API_KEY = "AIzaSyAi1JZo1DgfW166HC6eYnBFU5wtdAlZhIE"; 
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || ""; // API key from environment variables
 const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent";
 
 const CVTailorPage: React.FC = () => {
@@ -142,13 +142,18 @@ const CVTailorPage: React.FC = () => {
       .replace(/\s{2,}/g, ' ')                // Multiple spaces -> single space
       .trim();
   };
-
   // Enhance resume with Gemini
   const enhanceResumeWithGemini = async (resumeText: string) => {
     try {
       setLoading(true);
       setError("");
-        // Enhanced prompt for Gemini with clearer structure requirements
+
+      // Check if API key is available
+      if (!GEMINI_API_KEY) {
+        throw new Error("API key is missing. Please check your environment variables.");
+      }
+      
+      // Enhanced prompt for Gemini with clearer structure requirements
       const prompt = `
 Generate a professional CV in clean plain text format based on the following resume text:
 
