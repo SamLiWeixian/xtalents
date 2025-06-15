@@ -28,6 +28,44 @@ body {
   align-items: center;
 }
 
+/* Copyright Footer Styles */
+.copyright-footer {
+  background-color: #000000;
+  color: white;
+  padding: 0.75rem 0; /* Reduced padding for a more compact look */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.copyright-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.copyright-footer p {
+  margin: 0;
+  font-size: 0.75rem; /* Smaller base font size */
+  line-height: 1.5;
+}
+
+/* Responsive styling for copyright footer */
+@media (max-width: 768px) {
+  .copyright-footer p {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .copyright-footer p {
+    font-size: 0.65rem;
+  }
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;

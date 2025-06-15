@@ -7,6 +7,7 @@ import DonatePage from './pages/DonatePage'; // Will use this for the Support Us
 import CVTailorPage from './pages/CVTailorPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import CopyrightFooter from './components/CopyrightFooter';
 import './App.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/cv-tailor" element={<CVTailorPage />} />
         </Routes>
         <Footer />
+        <CopyrightFooter />
       </div>
     </BrowserRouter>
   );
