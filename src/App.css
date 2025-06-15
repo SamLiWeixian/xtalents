@@ -2,9 +2,14 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #ffffff;  /* White background */
   margin: 0;
+  padding: 0;
   color: #2c3e50;  /* Dark blue-gray text for better readability */
+}
+
+#root {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
   width: 100%;
 }
 
@@ -13,11 +18,14 @@ body {
   min-height: 100vh;
   flex-direction: column;
   width: 100%;
-  max-width: 1400px;  /* Limit maximum width */
 }
 
 .main-content {
   flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
@@ -26,9 +34,6 @@ body {
   padding: 0 1rem;
   width: 100%;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 h1, h2, h3 {

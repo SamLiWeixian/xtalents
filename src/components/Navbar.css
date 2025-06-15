@@ -1,156 +1,340 @@
-/* Navbar styles */
+/* Modern Navbar styles */
 .navbar {
   background: var(--welcome-gradient);  /* Gradient with blue and lime green */
-  color: white;  /* White text for contrast */
-  padding: 1rem 0;
+  color: white;
+  padding: 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 12px rgba(57, 255, 20, 0.2);  /* Subtle green glow */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 100%;
 }
-
-/* Removing the bottom border to match footer style */
 
 .navbar .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 2rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  height: 85px; /* Slightly increased height to accommodate larger logo */
+  position: relative; /* For proper positioning of child elements */
+  box-sizing: border-box;
+  flex-wrap: nowrap;
 }
 
 .navbar .nav-left {
   display: flex;
   align-items: center;
-  width: 20%; /* Reduced width for the logo */
+  width: 20%; /* Logo space */
 }
 
 .navbar .nav-center {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 75%; /* Further increased width for the center navigation */
+  width: 70%; /* More room for navigation links */
 }
 
 .navbar .nav-right {
-  display: flex;
+  display: none; /* Hidden initially, will be shown in mobile view */
   align-items: center;
   justify-content: flex-end;
-  width: 5%; /* Reduced width for the right section */
+  width: 10%; 
 }
 
 .navbar .logo {
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
-  color: white;  /* White logo for contrast against blue background */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.3s ease;
+  height: 100%;
+  padding: 0.5rem 0;
+}
+
+.navbar .logo:hover {
+  transform: scale(1.02);
+}
+
+.navbar .logo-image {
+  height: 65px; /* Increased height for desktop */
+  width: auto;
+  object-fit: contain;
+  max-height: 100%;
 }
 
 .navbar .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem; /* Increased gap between links */
+  gap: 1.5rem; /* Consistent spacing */
   margin: 0;
   padding: 0;
-  width: 100%; /* Take full width of parent */
-  align-items: center; /* Ensure vertical alignment */
-  justify-content: center; /* Center items */
-  flex-wrap: nowrap; /* Prevent wrapping */
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.navbar .nav-links li {
+  position: relative;
+  display: flex;
+  height: 100%;
+  align-items: center;
 }
 
 .navbar .nav-links li a {
-  color: white;  /* White text for contrast against blue background */
+  color: white;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1rem; /* Standard size */
   font-weight: 600;
   transition: all 0.3s ease;
   padding: 0.5rem 0.75rem;
   border-radius: 4px;
   position: relative;
-  box-sizing: border-box; /* Ensure padding is included in width/height */
-  display: inline-block; /* Consistent display behavior */
-  white-space: nowrap; /* Prevent text wrapping */
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  height: 100%;
 }
 
 .navbar .nav-links li a::after {
   content: '';
   position: absolute;
-  bottom: -2px;
-  left: 50%;
+  bottom: -4px;
+  left: 0;
   width: 0;
-  height: 2px;
-  background: var(--primary-green);  /* Lime green underline for contrast */
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
+  height: 3px;
+  background: var(--primary-green);
+  transition: width 0.3s ease;
 }
 
 .navbar .nav-links li a:hover::after {
-  width: 80%;
+  width: 100%;
 }
 
 .navbar .nav-links li a:hover {
-  color: var(--primary-green);  /* Lime green text on hover for a pop of color */
-  text-decoration: none;
+  color: white;
+  transform: translateY(-2px);
 }
 
 .navbar .highlight-link {
-  background: rgba(255, 255, 255, 0.2);  /* Semi-transparent white background */
-  color: white !important;  /* White text for contrast */
-  padding: 0.5rem 1rem;  /* Match the padding of non-highlighted links */
-  border-radius: 6px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  color: white !important;
   position: relative;
-  overflow: hidden;
-  z-index: 1;
-  box-sizing: border-box;  /* Ensure padding is included in width calculations */
-  display: inline-block; /* Consistent display behavior */
-  /* Using box-shadow instead of border to avoid layout shifts */
-  box-shadow: 0 2px 0 var(--primary-green);
-}
-
-.navbar .highlight-link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--welcome-gradient);
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.navbar .highlight-link:hover {
-  text-decoration: none !important;
-  box-shadow: 0 2px 0 var(--primary-green), 0 4px 12px rgba(57, 255, 20, 0.4);
-}
-
-.navbar .highlight-link:hover::before {
-  opacity: 1;
+  font-weight: 700;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 
 .navbar .highlight-link::after {
-  display: none;  /* Hide the underline effect for highlight links */
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--primary-green);
+  box-shadow: 0 2px 8px rgba(57, 255, 20, 0.3);
 }
 
+/* Improved mobile menu button styling */
 .mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
+  display: none; /* Hide by default, shown in media query */
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
-  padding: 0.25rem;
-  margin-left: auto;
+  padding: 0;
+  color: white;
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin: auto 0; /* Center vertically */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  align-self: center; /* Ensure vertical alignment */
+}
+
+.mobile-menu-btn:hover, .mobile-menu-btn:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced mobile menu button */
+.mobile-menu-btn svg {
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn-active svg {
+  transform: rotate(180deg);
+}
+
+/* Button animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(57, 255, 20, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(57, 255, 20, 0);
+  }
+}
+
+.mobile-menu-btn-active {
+  animation: pulse 1.5s infinite;
+}
+
+/* Fixed positioning for menu button */
+@media (max-width: 992px) {
+  .navbar .nav-right {
+    position: relative;
+    z-index: 1001; /* Above the dropdown menu */
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .mobile-menu-btn {
+    position: relative;
+    z-index: 1001;
+    margin: auto 0;
+  }
+  
+  /* Ensure menu doesn't block home button */
+  .navbar .nav-links.nav-active {
+    padding-top: 0.5rem;
+  }
+  
+  .navbar .nav-links li:first-child {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Mobile menu button active state */
+.mobile-menu-btn-active {
+  background-color: var(--primary-green) !important;
+  border-color: var(--primary-green);
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+  transform: scale(1.05);
+}
+
+/* Additional styles for animations and accessibility */
+
+/* Subtle animation for the navbar on scroll */
+@media (min-width: 992px) {
+  .navbar.scrolled {
+    padding: 0.25rem 0;
+    background: var(--primary-blue);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar.scrolled .logo-image {
+    height: 55px; /* Slightly smaller when scrolled but still larger than before */
+  }
+}
+
+/* Focus styles for accessibility */
+.navbar a:focus, .navbar button:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* Animate mobile menu button */
+.mobile-menu-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu-btn:hover svg {
+  transform: rotate(90deg);
+}
+
+/* For small mobile devices */
+@media (max-width: 480px) {
+  .navbar .container {
+    padding: 0 1rem;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .navbar .nav-left {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .nav-right {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .navbar .logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .logo-image {
+    height: 38px;
+  }
+  
+  .navbar .nav-center {
+    top: 60px;
+  }
+  
+  .navbar .nav-links.nav-active {
+    max-height: calc(100vh - 60px);
+  }
+  
+  .mobile-menu-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* Mobile styles */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+  /* Adjust spacing for medium-sized screens */
   .navbar .container {
-    flex-wrap: wrap;
+    padding: 0 1rem;
+  }
+  
+  .navbar .nav-links {
+    gap: 1rem;
+  }
+  
+  .navbar .nav-links li a {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar .container {
+    padding: 0 1rem;
+    height: 70px; /* Slightly smaller for mobile */
   }
   
   .navbar .nav-left {
@@ -158,52 +342,439 @@
   }
   
   .navbar .nav-center {
-    order: 3; /* Move below in mobile view */
-    width: 100%; /* Full width */
+    order: 3;
+    width: 100%;
   }
   
   .navbar .nav-right {
-    width: 30%; /* Space for menu button */
+    display: flex; /* Show on mobile */
+    width: 30%;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .navbar .logo-image {
+    height: 45px; /* Smaller logo on mobile */
   }
   
   .mobile-menu-btn {
-    display: block;
+    display: flex; /* Show menu button at this breakpoint */
   }
+}
 
-  .navbar .logo img {
-    height: 150px !important;
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-wrap: nowrap;
+    padding: 0 1rem;
+    align-items: center;
+    height: 65px; /* Consistent height */
+    position: relative; /* Ensures proper stacking context */
+    display: flex;
+    flex-direction: row;
+  }
+    .navbar .nav-left {
+    width: 70%; /* Adjust space for logo */
+    display: flex;
+    align-items: center;
+    padding-right: 0;
+    height: 100%;
   }
   
-  .navbar .nav-links {
-    position: absolute;
-    top: 100%;
+  .navbar .nav-center {
+    width: 100%;
+    position: fixed; /* Changed from absolute for better control */
+    left: 0;
+    top: 65px; /* Match navbar height */
+    z-index: 99;
+  }
+  
+  .navbar .nav-right {
+    width: 30%; /* Enough space for menu button */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 0;
+    height: 100%;
+  }    .navbar .nav-links {
+    position: fixed; /* Changed from absolute for better control */
+    top: 65px; /* Match navbar height */
     left: 0;
     right: 0;
-    flex-direction: column; /* Stack vertically in mobile */
-    background-color: var(--primary-blue); /* Match theme */
+    flex-direction: column;
+    background: var(--primary-blue);
     align-items: center;
-    padding: 1rem 0;
-    gap: 1rem;
-    transform: translateY(-150%);
-    transition: transform 0.3s ease-in-out;
+    justify-content: center;
+    padding: 0; /* Start with no padding */
+    gap: 0;
+    height: 0; /* Start with no height */
+    overflow: hidden; /* Hide overflow */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
     z-index: 999;
-    box-shadow: 0 4px 12px rgba(57, 255, 20, 0.2);
-    flex-wrap: wrap; /* Allow wrapping in mobile dropdown */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    visibility: hidden;
+    text-align: center;
   }
 
   .navbar .nav-links.nav-active {
     transform: translateY(0);
+    height: auto;
+    max-height: calc(100vh - 65px); /* Viewport height minus navbar */
+    padding: 1rem 0;
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto; /* Allow scrolling if too many items */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+    .navbar .nav-links li {
+    width: 100%;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    animation-delay: calc(0.1s * var(--i, 0));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .navbar .nav-links.nav-active li {
+    --i: 1;
+  }
+  
+  .navbar .nav-links li:nth-child(2) {
+    --i: 2;
+  }
+  
+  .navbar .nav-links li:nth-child(3) {
+    --i: 3;
+  }
+  
+  .navbar .nav-links li:nth-child(4) {
+    --i: 4;
+  }
+  
+  .navbar .nav-links li:nth-child(5) {
+    --i: 5;
+  }
+  
+  .navbar .nav-links li:nth-child(6) {
+    --i: 6;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+    .navbar .nav-links li a {
+    display: flex;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    border-left: 4px solid transparent;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .navbar .nav-links li a:hover {
+    border-left: 4px solid var(--primary-green);
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: none;
+  }
+  
+  .navbar .nav-links li a::after {
+    display: none;
+  }
+    .navbar .highlight-link {
+    border-left: 4px solid var(--primary-green) !important;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .navbar .highlight-link::before {
+    display: none;
+  }
+}
+
+/* Improved mobile navigation styles */
+@media (max-width: 768px) {
+  /* Container adjustments */
+  .navbar .container {
+    padding: 0 1rem;
+    height: 65px;
+  }
+  
+  /* Mobile nav adjustment */
+  .navbar .nav-right {
+    width: 20%;
+    padding-right: 0.25rem;
+  }
+  
+  .navbar .nav-left {
+    width: 80%;
+  }
+  /* Mobile menu button adjustment */
+  .mobile-menu-btn {
+    height: 42px;
+    width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Mobile menu link styles */
+  .navbar .nav-links li {
+    width: 100%;
+    text-align: center;
+    height: auto;
+    opacity: 0;
+    transform: translateY(5px);
+    animation: fadeInMobile 0.4s forwards;
+    animation-delay: calc(0.05s * var(--i));
+  }
+  
+  @keyframes fadeInMobile {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+    .navbar .nav-links li a {
+    padding: 0.9rem 1.25rem;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .navbar .nav-links li:last-child a {
+    border-bottom: none;
+  }
+    /* Active link styling on mobile */
+  .navbar .highlight-link {
+    background-color: rgba(57, 255, 20, 0.1);
+    border-left: 4px solid var(--primary-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+    /* Mobile logo adjustment */
+  .navbar .logo-image {
+    height: 42px;
+    margin-left: 0; /* Remove left margin */
+  }
+    /* Menu button positioning */
+  .navbar .nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 0;
+  }
+  
+  /* Ensure consistent spacing */
+  .navbar .nav-links {
+    margin-top: 0;
+  }
+}
+
+/* Clean up mobile menu styles */
+@media (max-width: 768px) {
+  .navbar .nav-links li {
+    width: 100%;
+    text-align: center;
+    height: auto;
+  }
+  
+  .navbar .nav-links li a {
+    padding: 0.75rem 1rem;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+  
+  .navbar .nav-links li a::after {
+    bottom: 0;
+  }
+  
+  .navbar .highlight-link {
+    background-color: rgba(57, 255, 20, 0.1);
+  }
+}
+
+/* Ensure smooth transition between screen sizes */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .navbar .logo-image {
+    height: 60px; /* Medium size for medium screens */
+  }
+  
+  .navbar .container {
+    height: 80px; /* Medium height for medium screens */
+  }
+}
+
+/* Desktop hover enhancements */
+@media (min-width: 769px) {
+  .navbar .nav-links li a:hover {
+    transform: translateY(-2px);
+  }
+  
+  .navbar .nav-links li a::after {
+    transition: width 0.3s ease;
+  }
+}
+
+/* Desktop-specific enhancements */
+@media (min-width: 993px) {
+  .navbar .nav-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .navbar .nav-links {
+    height: 100%;
+  }
+  
+  .navbar .nav-links li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .nav-links li a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Desktop-specific logo size */
+@media (min-width: 1200px) {
+  .navbar .logo-image {
+    height: 70px; /* Even larger for big desktop screens */
+  }
+  
+  .navbar .container {
+    height: 90px; /* More space for the larger logo */
+  }
+}
+
+/* Enhanced desktop logo styles */
+@media (min-width: 1024px) {
+  .navbar .logo-image {
+    height: 70px;
+    transition: height 0.3s ease;
+  }
+  
+  .navbar .container {
+    height: 90px;
+    transition: height 0.3s ease;
+  }
+  
+  /* Add extra spacing for navigation when logo is larger */
+  .navbar .nav-links {
+    gap: 1.8rem;
+  }
+}
+
+/* Portrait mode fix for vertical alignment */
+@media screen and (orientation: portrait) and (max-width: 768px) {
+  .navbar .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar .nav-left, 
+  .navbar .nav-right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar .logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto 0;
+  }
+
+  /* Ensure perfectly centered navigation links */
+  .navbar .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
   }
   
   .navbar .nav-links li {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar .nav-links li a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Landscape mode fix for horizontal alignment */
+@media screen and (orientation: landscape) and (max-width: 992px) {
+  .navbar .nav-links {
+    padding: 0.5rem 0;
+  }
+  
+  .navbar .nav-links li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     text-align: center;
   }
   
   .navbar .nav-links li a {
-    display: block;
-    padding: 0.75rem 1rem;
     width: 100%;
-    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 3rem; /* Add extra padding to offset the border-left */
+    padding-right: 3rem;
+  }
+  
+  .navbar .highlight-link {
+    justify-content: center;
+    text-align: center;
   }
 }
