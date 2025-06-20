@@ -124,8 +124,8 @@ const HomePage: React.FC = () => (
                 fontWeight: 'bold'
               }}>2</div>
               <div>
-                <h3 style={{ margin: '0 0 0.5rem 0' }}>Personalized Talent Consultation</h3>
-                <p style={{ margin: 0 }}>Meet with our talent advisors who will understand your needs and aspirations.</p>
+                <h3 style={{ margin: '0 0 0.5rem 0' }}>X Talents Community Outreach</h3>
+                <p style={{ margin: 0 }}>Connect with fellow X Talents Community members.</p>
               </div>
             </div>
             

@@ -82,7 +82,7 @@ const PartnerSection: React.FC = () => {
             <div>
               <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '1rem' }}>
                 <FaCheck style={{ color: 'var(--primary-green)', marginRight: '0.5rem', marginTop: '0.3rem' }} />
-                <p style={{ margin: 0 }}>List job opportunities for diverse talent</p>
+                <p style={{ margin: 0 }}>Expose job opportunities for diverse talent</p>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start' }}>
                 <FaCheck style={{ color: 'var(--primary-green)', marginRight: '0.5rem', marginTop: '0.3rem' }} />
@@ -93,11 +93,11 @@ const PartnerSection: React.FC = () => {
             <div>
               <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '1rem' }}>
                 <FaCheck style={{ color: 'var(--primary-green)', marginRight: '0.5rem', marginTop: '0.3rem' }} />
-                <p style={{ margin: 0 }}>Participate in career fairs and networking events</p>
+                <p style={{ margin: 0 }}>Participate in networking events</p>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start' }}>
                 <FaCheck style={{ color: 'var(--primary-green)', marginRight: '0.5rem', marginTop: '0.3rem' }} />
-                <p style={{ margin: 0 }}>Support skills development and training programs</p>
+                <p style={{ margin: 0 }}>Support the X Talents Ecosystem</p>
               </div>
             </div>
           </div>
