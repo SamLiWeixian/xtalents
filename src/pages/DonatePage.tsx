@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaHandHoldingHeart, FaMoneyCheckAlt, FaHandsHelping } from 'react-icons/fa';
 import SupportersSection from '../components/SupportersSection';
+import QRCodeModal from '../components/QRCodeModal';
 
 const DonatePage: React.FC = () => { // Consider renaming this component to SupportPage in a future update
+  const [isQRModalOpen, setIsQRModalOpen] = useState(false);
+  
+  const openQRModal = () => {
+    setIsQRModalOpen(true);
+  };
+  
+  const closeQRModal = () => {
+    setIsQRModalOpen(false);
+  };
   
   return (
     <main className="container">      <h1 style={{ marginBottom: '1.5rem' }}>Support Our Mission</h1>      <div className="mission-section" style={{ 
@@ -31,10 +41,10 @@ const DonatePage: React.FC = () => { // Consider renaming this component to Supp
           boxShadow: '0 4px 15px rgba(57, 255, 20, 0.1)',
           border: '1px solid rgba(52, 152, 219, 0.3)'
         }}>          
-          <FaMoneyCheckAlt style={{ fontSize: '3rem', color: 'var(--primary-blue)', margin: '0 0 1rem 0' }}/>          
-          <h2>Support Us</h2>
+          <FaMoneyCheckAlt style={{ fontSize: '3rem', color: 'var(--primary-blue)', margin: '0 0 1rem 0' }}/>            <h2>Support Us</h2>
           <p>Your financial contribution directly supports our programs, workshops, and services for job seekers.</p>
-          <a href="mailto:xtalentsfoundation@gmail.com?subject=Make%20a%20Contribution&body=Hello%20X%20Talents%2C%0A%0AI%20would%20like%20to%20make%20a%20contribution%20to%20support%20your%20mission.%20Please%20provide%20me%20with%20information%20on%20how%20I%20can%20contribute.%0A%0ARegards%2C%0A" 
+          <button 
+             onClick={openQRModal}
              className="cta-button" 
              style={{ 
                marginTop: '1rem', 
@@ -42,8 +52,9 @@ const DonatePage: React.FC = () => { // Consider renaming this component to Supp
                display: 'inline-block',
                background: 'var(--welcome-gradient)',
                border: 'none',
-               boxShadow: 'var(--card-glow)'
-             }}>Support Us!</a>
+               boxShadow: 'var(--card-glow)',
+               cursor: 'pointer'
+             }}>Support Us!</button>
         </div>          <div className="job-card" style={{
           textAlign: 'center',
           background: 'linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(57, 255, 20, 0.1))',
@@ -179,9 +190,9 @@ const DonatePage: React.FC = () => { // Consider renaming this component to Supp
               <p style={{ margin: 0 }}>Helps establish mentorship programs and long-term career support</p>
             </div>
           </div>
-        </div>
-      </section>
+        </div>      </section>
         <SupportersSection />
+        <QRCodeModal isOpen={isQRModalOpen} onClose={closeQRModal} />
     </main>
   );
 };
