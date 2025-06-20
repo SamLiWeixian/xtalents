@@ -139,7 +139,7 @@ const DonatePage: React.FC = () => { // Consider renaming this component to Supp
               $50
             </div>
             <div style={{ flex: 1, marginLeft: '1.5rem' }}>
-              <p style={{ margin: 0 }}>Provides career counseling for one job seeker</p>
+              <p style={{ margin: 0 }}>Provides career searching for X Talents community</p>
             </div>
           </div>
           
@@ -155,7 +155,7 @@ const DonatePage: React.FC = () => { // Consider renaming this component to Supp
               $100
             </div>
             <div style={{ flex: 1, marginLeft: '1.5rem' }}>
-              <p style={{ margin: 0 }}>Funds a workshop for 10 participants to develop essential job skills</p>
+              <p style={{ margin: 0 }}>Funds the enterprise in outreach programmes for the X Talents community</p>
             </div>
           </div>
           
@@ -171,7 +171,7 @@ const DonatePage: React.FC = () => { // Consider renaming this component to Supp
               $250
             </div>
             <div style={{ flex: 1, marginLeft: '1.5rem' }}>
-              <p style={{ margin: 0 }}>Supports a job fair connecting job seekers with potential employers</p>
+              <p style={{ margin: 0 }}>Supports a platform connecting job seekers with potential employers</p>
             </div>
           </div>
           
@@ -187,7 +187,7 @@ const DonatePage: React.FC = () => { // Consider renaming this component to Supp
               $500+
             </div>
             <div style={{ flex: 1, marginLeft: '1.5rem' }}>
-              <p style={{ margin: 0 }}>Helps establish mentorship programs and long-term career support</p>
+              <p style={{ margin: 0 }}>Helps establish sustainable long-term career support</p>
             </div>
           </div>
         </div>      </section>
