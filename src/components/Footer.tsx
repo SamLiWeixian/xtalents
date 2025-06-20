@@ -55,10 +55,9 @@ const Footer: React.FC = () => {
               </li>
             ))}
           </ul>
-        </div>
-          <div
+        </div>          <div
           className="social-icons"
-          style={{ marginBottom: "1.5rem", display: "flex", gap: "1.5rem" }}        >
+          style={{ marginBottom: "1rem", display: "flex", gap: "1.5rem" }}        >
           <a 
             href="https://www.linkedin.com/company/x-talents-foundation/" 
             target="_blank" 
@@ -68,6 +67,34 @@ const Footer: React.FC = () => {
             <FaLinkedin size={24} color="white" style={{ cursor: "pointer" }} />
           </a>
         </div>
+        
+        <div className="legal-links" style={{ marginBottom: "1.5rem", display: "flex", gap: "2rem" }}>
+          <Link 
+            to="/terms-of-use" 
+            style={{
+              color: "white",
+              textDecoration: "none",
+              fontSize: "0.9rem",
+              borderBottom: location.pathname === "/terms-of-use" ? "1px solid var(--primary-green)" : "none",
+              padding: "0.2rem 0"
+            }}
+          >
+            Terms of Use
+          </Link>
+          <Link 
+            to="/privacy-policy" 
+            style={{
+              color: "white",
+              textDecoration: "none",
+              fontSize: "0.9rem",
+              borderBottom: location.pathname === "/privacy-policy" ? "1px solid var(--primary-green)" : "none",
+              padding: "0.2rem 0"
+            }}
+          >
+            Privacy Policy
+          </Link>
+        </div>
+        
           <p style={{ margin: 0, color: "white" }}>
           &copy; 2025 X Talents. All rights reserved.
         </p>

@@ -5,6 +5,8 @@ import TalentPoolPage from './pages/TalentPoolPage';
 import ResumeUploadPage from './pages/ResumeUploadPage';
 import DonatePage from './pages/DonatePage'; // Will use this for the Support Us page
 import CVTailorPage from './pages/CVTailorPage';
+import TermsOfUsePage from './pages/TermsOfUsePage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CopyrightFooter from './components/CopyrightFooter';
@@ -22,6 +24,8 @@ function App() {
           <Route path="/resume-upload" element={<ResumeUploadPage />} />
           <Route path="/support" element={<DonatePage />} /> {/* Using DonatePage for /support route */}
           <Route path="/cv-tailor" element={<CVTailorPage />} />
+          <Route path="/terms-of-use" element={<TermsOfUsePage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         </Routes>
         <Footer />
         <CopyrightFooter />
